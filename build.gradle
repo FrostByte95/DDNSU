@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id "com.gradle.build-scan" version "2.4.2"
+    id 'application'
+}
+
+application{
+    mainClassName = 'CLI'
+}
+
+group 'com.jrelich.tools.network'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "com.jrelich.tools.network:gdyndns"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+run{
+    standardInput=System.in
+}
